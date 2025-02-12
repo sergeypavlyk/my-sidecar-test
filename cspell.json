@@ -1,0 +1,5 @@
+{
+    "language": "en",
+    "ignorePaths": ["src/**/*.json", "public/**/*.json", "next.config.js", "package.json"],
+    "words": []
+}
