@@ -26,7 +26,7 @@ export default function UserData() {
       <h1>Dashboard</h1>
       <p>Welcome, {user.name}!</p>
       <button
-        className="bg-white text-black rounded-xl w-full hover:bg-red-300 transition-colors duration-300"
+        className="bg-white text-black rounded-xl p-2 hover:bg-green-300 transition-colors duration-300 disabled:opacity-50"
         type="button"
         onClick={logout}
       >

@@ -76,20 +76,18 @@ export default function LoginForm() {
 }
 
 function LoggedInView({ user, logout }: { user: User; logout: () => void }) {
-  return (
-    user && (
-      <div className="flex flex-col gap-4">
-        <p>Welcome, {user.name}!</p>
-        <button
-          className="bg-white text-black rounded-xl p-2 w-full hover:bg-red-300 transition-colors duration-300"
-          type="button"
-          onClick={logout}
-        >
-          Log Out
-        </button>
-      </div>
-    )
-  );
+  return user ? (
+    <div className="flex flex-col gap-4">
+      <p>Welcome, {user.name}!</p>
+      <button
+        className="bg-white text-black rounded-xl p-2 w-full hover:bg-red-300 transition-colors duration-300"
+        type="button"
+        onClick={logout}
+      >
+        Log Out
+      </button>
+    </div>
+  ) : null;
 }
 
 function InputField({

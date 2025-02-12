@@ -1,7 +1,8 @@
 'use client';
 
 import { createContext, useState, ReactNode, useContext, useEffect } from 'react';
-import { LocalStorageEnum } from '@/enums';
+import { LocalStorageEnum, PathEnum } from '@/enums';
+import { useRouter } from 'next/navigation';
 
 export type User = {
   id: string;
@@ -18,6 +19,7 @@ export type AuthContextType = {
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
+  const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
@@ -35,6 +37,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const logout = () => {
     setUser(null);
     localStorage.removeItem(LocalStorageEnum.User);
+    router.push(PathEnum.Login);
   };
 
   return <AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>;
