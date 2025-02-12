@@ -51,37 +51,45 @@ export default function LoginForm() {
     }
   };
 
-  return user ? (
-    <div className="flex flex-col gap-4">
-      <h1>Dashboard</h1>
-      <p>Welcome, {user.name}!</p>
-      <button
-        className="bg-white text-black rounded-xl w-full hover:bg-red-300 transition-colors duration-300"
-        type="button"
-        onClick={logout}
-      >
-        Log Out
-      </button>
-    </div>
-  ) : (
-    <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col gap-2 relative">
+  return (
+    <>
       <h1>Login</h1>
-      <input className="text-black p-1" type="email" placeholder="Email" {...register('email')} />
-      {errors.email && <p className="text-red-500">{errors.email.message}</p>}{' '}
-      <input
-        className="text-black p-1"
-        type="password"
-        placeholder="Password"
-        {...register('password')}
-      />
-      {errors.password && <p className="text-red-500">{errors.password.message}</p>}{' '}
-      <button
-        className="bg-white text-black rounded-xl hover:bg-green-300 transition-colors duration-300"
-        type="submit"
-      >
-        Log In
-      </button>
-      {error && <p className="text-red-500 absolute top-full mt-8">{error}</p>}
-    </form>
+      {user ? (
+        <div className="flex flex-col gap-4">
+          <p>Welcome, {user.name}!</p>
+          <button
+            className="bg-white text-black rounded-xl w-full hover:bg-red-300 transition-colors duration-300"
+            type="button"
+            onClick={logout}
+          >
+            Log Out
+          </button>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col gap-2 relative">
+          <input
+            className="text-black p-1"
+            type="email"
+            placeholder="Email"
+            {...register('email')}
+          />
+          {errors.email && <p className="text-red-500">{errors.email.message}</p>}{' '}
+          <input
+            className="text-black p-1"
+            type="password"
+            placeholder="Password"
+            {...register('password')}
+          />
+          {errors.password && <p className="text-red-500">{errors.password.message}</p>}{' '}
+          <button
+            className="bg-white text-black rounded-xl hover:bg-green-300 transition-colors duration-300"
+            type="submit"
+          >
+            Log In
+          </button>
+          {error && <p className="text-red-500 absolute top-full mt-8">{error}</p>}
+        </form>
+      )}
+    </>
   );
 }
