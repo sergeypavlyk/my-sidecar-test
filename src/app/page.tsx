@@ -1,23 +1,13 @@
-'use client';
-
-import { useAuth } from '@/hooks';
+import { PathEnum } from '@/enums';
 import Link from 'next/link';
 
-export default function Home() {
-  const { user, logout } = useAuth();
-
+export default async function Home() {
   return (
     <div className="flex flex-col items-center gap-4">
-      <h1>Home</h1>
+      <h1>Home Page</h1>
       <nav className="flex gap-4">
-        {user ? (
-          <>
-            <Link href="/dashboard">Dashboard</Link>
-            <button onClick={logout}>Log Out</button>
-          </>
-        ) : (
-          <Link href="/login">Login</Link>
-        )}
+        <Link href={PathEnum.Dashboard}>Dashboard</Link>
+        <Link href={PathEnum.Login}>Login</Link>
       </nav>
     </div>
   );
