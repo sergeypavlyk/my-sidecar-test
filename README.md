@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Credentials for Testing
+
+Use the following credentials to log in:
+
+- **Email:** `john@example.com`
+- **Password:** `12345678`
+
 ## Getting Started
 
 First, run the development server:

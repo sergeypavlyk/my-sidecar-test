@@ -1,31 +1,35 @@
 {
-    "extends": [
-        "next",
-        "next/core-web-vitals",
-        "eslint:recommended",
-        "plugin:jsx-a11y/recommended",
-        "prettier",
-        "plugin:cypress/recommended"
-    ],
-    "globals": {
-        "React": "readonly",
-        "test": "readonly",
-        "expect": "readonly"
-    },
-    "rules": {
-        "no-unused-vars": "warn",
-        "react/prop-types": 0,
-        "react/destructuring-assignment": 0,
-        "react/static-property-placement": 0,
-        "jsx-a11y/alt-text": 0,
-        "jsx-a11y/rule-name": "off",
-        "react/jsx-props-no-spreading": 0,
-        "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "react/require-default-props": "off"
-    },
-    "env": {
-        "jest": true
-    },
-    "ignorePatterns": ["react-components-library", "cypress"]
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "plugin:cypress/recommended"
+  ],
+  "globals": {
+    "React": "readonly",
+    "test": "readonly",
+    "expect": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "react/prop-types": 0,
+    "react/destructuring-assignment": 0,
+    "react/static-property-placement": 0,
+    "jsx-a11y/alt-text": 0,
+    "jsx-a11y/rule-name": "off",
+    "react/jsx-props-no-spreading": 0,
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/require-default-props": "off"
+  },
+  "env": {
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "ignorePatterns": ["react-components-library", "cypress"]
 }
