@@ -3,13 +3,13 @@
 import { createContext, useState, ReactNode, useContext, useEffect } from 'react';
 import { LocalStorageEnum } from '@/enums';
 
-type User = {
+export type User = {
   id: string;
   name: string;
   email: string;
 } | null;
 
-type AuthContextType = {
+export type AuthContextType = {
   user: User;
   login: (user: User) => void;
   logout: () => void;
