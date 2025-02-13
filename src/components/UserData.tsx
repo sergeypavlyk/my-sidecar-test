@@ -1,7 +1,7 @@
 'use client';
 
-import { PathEnum } from '@/enums';
-import { useAuth } from '@/hooks';
+import { PathEnum } from '@/lib/enums';
+import { useAuth } from '@/lib/hooks';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';

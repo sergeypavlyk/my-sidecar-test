@@ -1,4 +1,4 @@
-import { PathEnum } from '@/enums';
+import { PathEnum } from '@/lib/enums';
 import Link from 'next/link';
 
 export default function NotFound() {

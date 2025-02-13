@@ -3,8 +3,8 @@
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useAuth } from '@/hooks';
-import { PathEnum } from '@/enums';
+import { useAuth } from '@/lib/hooks';
+import { PathEnum } from '@/lib/enums';
 import { loginSchema } from '@/lib/validationSchema';
 import { User } from '@/providers/UserProvider';
 import { Input } from '@/components/ui/input';

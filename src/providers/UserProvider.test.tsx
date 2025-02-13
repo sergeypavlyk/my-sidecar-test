@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { act } from 'react';
-import { useAuth } from '@/hooks';
+import { useAuth } from '@/lib/hooks';
 import { UserProvider } from './UserProvider';
 
 function TestComponent() {

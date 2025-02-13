@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useState, ReactNode, useContext, useEffect } from 'react';
-import { LocalStorageEnum, PathEnum } from '@/enums';
+import { LocalStorageEnum, PathEnum } from '@/lib/enums';
 import { useRouter } from 'next/navigation';
 
 export type User = {

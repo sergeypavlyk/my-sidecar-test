@@ -1,10 +1,5 @@
-import { PathEnum } from '@/enums';
+import { navLinks } from '@/lib/constants';
 import Link from 'next/link';
-
-const navLinks = [
-  { href: PathEnum.Dashboard, label: 'Dashboard' },
-  { href: PathEnum.Login, label: 'Login' },
-];
 
 export default async function Home() {
   return (
