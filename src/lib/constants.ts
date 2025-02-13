@@ -1,4 +1,4 @@
-import { PathEnum } from "./enums";
+import { PathEnum } from './enums';
 
 export const navLinks = [
   { href: PathEnum.Dashboard, label: 'Dashboard' },

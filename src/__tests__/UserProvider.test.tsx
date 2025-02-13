@@ -1,11 +1,22 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { act } from 'react';
-import { useAuth } from '@/lib/hooks';
-import { UserProvider } from './UserProvider';
+import { useUser, UserProvider } from '@/providers/UserProvider';
+
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: jest.fn(),
+  }),
+}));
+
+beforeEach(() => {
+  Storage.prototype.getItem = jest.fn(() => null);
+  Storage.prototype.setItem = jest.fn();
+  Storage.prototype.removeItem = jest.fn();
+});
 
 function TestComponent() {
-  const { user, login } = useAuth();
+  const { user, login } = useUser();
 
   return (
     <div>
@@ -17,7 +28,7 @@ function TestComponent() {
   );
 }
 
-test('UserProvider changes state', () => {
+test('UserProvider updates user state on login', async () => {
   render(
     <UserProvider>
       <TestComponent />
