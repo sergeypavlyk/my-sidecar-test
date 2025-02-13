@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { UserProvider } from '@/providers/UserProvider';
 
 import './globals.css';
+import { ThemeProvider } from '@/providers/ThemeProvider';
+import { ModeToggle } from '@/components/ui/mode-toggler';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,7 +31,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-center items-center min-h-screen`}
       >
-        <UserProvider>{children}</UserProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <UserProvider>
+            {children}
+            <ModeToggle />
+          </UserProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

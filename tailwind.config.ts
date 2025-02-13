@@ -10,6 +10,7 @@ export default {
   ],
   theme: {
     extend: {
+			darkMode: 'class',
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

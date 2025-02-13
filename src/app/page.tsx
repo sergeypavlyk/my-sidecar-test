@@ -6,7 +6,7 @@ const navLinks = [
   { href: PathEnum.Login, label: 'Login' },
 ];
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="flex flex-col items-center gap-4">
       <h1>Home Page</h1>
@@ -14,7 +14,7 @@ export default function Home() {
         {navLinks.map(({ href, label }) => (
           <Link
             key={href}
-            className="hover:text-green-500 transition-colors duration-300"
+            className="hover:text-green-500 transition-colors duration-300 underline"
             href={href}
           >
             {label}
