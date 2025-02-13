@@ -4,6 +4,7 @@ import { PathEnum } from '@/enums';
 import { useAuth } from '@/hooks';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { Button } from '@/components/ui/button';
 
 export default function UserData() {
   const router = useRouter();
@@ -25,13 +26,9 @@ export default function UserData() {
     <div className="flex flex-col gap-4">
       <h1>Dashboard</h1>
       <p>Welcome, {user.name}!</p>
-      <button
-        className="bg-white text-black rounded-xl p-2 hover:bg-green-300 transition-colors duration-300 disabled:opacity-50"
-        type="button"
-        onClick={logout}
-      >
+      <Button variant="destructive" onClick={logout}>
         Log Out
-      </button>
+      </Button>
     </div>
   );
 }
